@@ -15,7 +15,7 @@ La base del proyecto radica en la implementación de un modelo de ML de recomend
 6. Se implementa un modelo de ML ya establecido conocido como "sentiment_analysis".
 7. Se ejecuta con una muestra aleatoria del dataset debido a su excesivo poder de cómputo que se necesita y con base en esto poder realizar las recomendaciones a los usuarios.
 8. Posteriormente se desarrollan algunas funciones como PlayTimeGenre, UserForGenre, UsersRecommend, UsersNotRecommend y sentiment_analysis; las cuales nos otorgan información relevante del negocio la cual es facilmente accesible desde un endpoint.
-9. Finalmente se implementa una APi gracias al framework FastAPÏ y se disponibiliza públicamente a través de Render.com 
+9. Finalmente se implementa una API gracias al framework FastAPI y se disponibiliza públicamente a través de [Render.com](https://api-steam-henry-proyecto1.onrender.com/)
 
 ## Resultados
 Se puede acceder a la siguiente dirección con el fin de acceder a los resultados de lo mencionado anteriomente:
