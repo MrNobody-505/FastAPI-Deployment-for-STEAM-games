@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 import pandas as pd
 
+df_merged = pd.read_csv("df_merged.csv")
+
 app = FastAPI()
 
 #http://127.0.0.1:8000
@@ -14,7 +16,6 @@ def index():
 
 @app.get('/PlayTimeGenre/{genero}')
 def PlayTimeGenre(genero: str):
-    df_merged = pd.read_csv("df_merged.csv")
     filtro_genero = df_merged[df_merged[genero] == True]
     grouped_df = filtro_genero.groupby('year')['playtime_forever'].max().reset_index()
     max_playtime_year = grouped_df.loc[grouped_df['playtime_forever'].idxmax()].astype(int)
