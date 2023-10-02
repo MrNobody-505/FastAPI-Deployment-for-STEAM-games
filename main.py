@@ -18,8 +18,7 @@ def index():
 def PlayTimeGenre(genero: str):
     filtro_genero = df_merged[df_merged[genero] == True]
     grouped_df = filtro_genero.groupby('year')['playtime_forever'].max().reset_index()
-    max_playtime_year = grouped_df.loc[grouped_df['playtime_forever'].idxmax()].astype(int)
+    max_playtime_year = grouped_df.loc[grouped_df['playtime_forever'].idxmax()]
     Anio = max_playtime_year['year']
     tiempo = max_playtime_year['playtime_forever']
-    #texto_genero = f"El anio con más tiempo de juego para el género {genero} es {max_playtime_year['year']} con {max_playtime_year['playtime_forever']} unidades de tiempo jugadas."
     return {'Genero': genero, 'Anio': Anio, 'Tiempo': tiempo}
