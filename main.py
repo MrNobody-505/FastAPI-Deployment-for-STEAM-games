@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import pandas as pd
 
-df_merged = pd.read_csv("\Data\df_merged.csv")
+df_merged = pd.read_csv("df_merged.csv")
 
 app = FastAPI()
 
