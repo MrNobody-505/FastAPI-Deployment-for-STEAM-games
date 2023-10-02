@@ -19,6 +19,6 @@ La base del proyecto radica en la implementación de un modelo de ML de recomend
 
 ## Resultados
 Se puede acceder a la siguiente dirección con el fin de acceder a los resultados de lo mencionado anteriomente:
- https://api-steam-henry-proyecto1.onrender.com/
- https://api-steam-henry-proyecto1.onrender.com/docs#/default/index__get
-https://github.com/MrNobody-505/Proyecto1
+ - https://api-steam-henry-proyecto1.onrender.com/
+ - https://api-steam-henry-proyecto1.onrender.com/docs#/default/index__get
+ - https://github.com/MrNobody-505/Proyecto1
