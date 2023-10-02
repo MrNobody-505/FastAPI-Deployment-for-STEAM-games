@@ -23,10 +23,11 @@ def PlayTimeGenre(genero: str):
     tiempo = max_playtime_year['playtime_forever']
     return {'Genero': genero, 'Anio': Anio, 'Tiempo': tiempo}
 
+
 @app.get('/UserForGenre/{genero}')
 def UserForGenre(genero: str):
     filtro_genero = df_merged[df_merged[genero] == True]
-    grouped_df = filtro_genero.groupby('user_id')['playtime_forever'].sum().reset_index()
+    grouped_df = filtro_genero.groupby('user_id')['playtime_forever'].max().reset_index()
     max_playtime = grouped_df['playtime_forever'].max()
-    user_id_with_max_playtime = grouped_df.loc[grouped_df['playtime_forever'] == max_playtime, 'user_id'].values.tolist()
-    return {'Genero': genero, 'Tiempo de juego': max_playtime, 'Usuario': user_id_with_max_playtime}
+    user_id_with_max_playtime = grouped_df.loc[grouped_df['playtime_forever'].idxmax(), 'user_id']
+    return {'Genero': genero,'Tiempo de juego': max_playtime,'Usuario': grouped_df.loc[grouped_df['playtime_forever'].idxmax(), 'user_id']}
