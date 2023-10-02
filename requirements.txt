@@ -11,4 +11,5 @@ sniffio
 starlette
 typing_extensions
 uvicorn
+pandas
 
