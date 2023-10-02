@@ -29,4 +29,4 @@ def UserForGenre(genero: str):
     grouped_df = filtro_genero.groupby('user_id')['playtime_forever'].max().reset_index()
     max_playtime = grouped_df['playtime_forever'].max()
     user_id_with_max_playtime = grouped_df.loc[grouped_df['playtime_forever'].idxmax(), 'user_id']
-    return {'Genero': genero, 'Tiempo de juego': max_playtime, 'Usuario': user_id_with_max_playtime}
+    return {'Genero': genero,'Tiempo de juego': max_playtime,'Usuario': user_id_with_max_playtime}
