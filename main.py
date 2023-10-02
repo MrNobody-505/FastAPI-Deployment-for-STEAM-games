@@ -9,5 +9,5 @@ app = FastAPI()
 
 def index():
     return {"Hola! soy César Forero", 
-            e-mail: cesarjf18@hotmail.com
-            GitHub: MrNobody-505 }
+            "e-mail: cesarjf18@hotmail.com"
+            "GitHub: MrNobody-505" }
