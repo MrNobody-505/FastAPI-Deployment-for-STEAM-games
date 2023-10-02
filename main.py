@@ -21,4 +21,4 @@ def PlayTimeGenre(genero: str):
     Anio = max_playtime_year['year']
     tiempo = max_playtime_year['playtime_forever']
     #texto_genero = f"El anio con más tiempo de juego para el género {genero} es {max_playtime_year['year']} con {max_playtime_year['playtime_forever']} unidades de tiempo jugadas."
-    return {'Genero': genero, 'Anio': Anio, 'titulos': titulos, 'Tiempo': tiempo}
+    return {'Genero': genero, 'Anio': Anio, 'Tiempo': tiempo}
