@@ -37,6 +37,5 @@ def UserForGenre(genero: str):
     return {'Genero': genero, 'Usuario con más horas jugadas': max_playtime_user, 'Acumulación de tiempo jugado por año': playtime_per_year}
 
 
-@app.get('/recomendacion_juego/{id_de_producto}')
-
-def recomendacion_juego(id_de_producto):
+@app.get('/recomendacion_juego/{idproducto}')
+" "
