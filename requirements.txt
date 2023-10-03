@@ -13,4 +13,3 @@ typing_extensions
 uvicorn
 pandas
 sklearn
-sklearn.metrics.pairwise
