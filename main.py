@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 import pandas as pd
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 df_merged = pd.read_csv("df_merged.csv")
@@ -33,3 +35,25 @@ def UserForGenre(genero: str):
     playtime_per_year = filtro_genero.groupby('year')['playtime_forever'].sum().reset_index().values.tolist()
     
     return {'Genero': genero, 'Usuario con más horas jugadas': max_playtime_user, 'Acumulación de tiempo jugado por año': playtime_per_year}
+
+
+@app.get('/recomendacion_juego/{id_de_producto}')
+
+sample_df = pd.read_csv("sample_df.csv")
+item_profiles = sample_df.groupby('item_id').agg({'sentiment_score': 'mean', 'item_name': 'first'}).reset_index()
+
+if item_profiles.empty:
+    print("No se encontró un juego similar")
+else:
+    similarity_matrix = cosine_similarity(item_profiles[['sentiment_score']])
+
+    def recomendacion_juego(id_de_producto):
+        item_index = item_profiles[item_profiles['item_id'] == id_de_producto].index
+        if item_index.empty:
+            print("No existe este juego.")
+            return [], []
+        item_index = item_index[0]
+        similar_items_indices = similarity_matrix[item_index].argsort()[::-1][1:6]
+        recommendations = sample_df.loc[similar_items_indices, 'item_id'].tolist()
+        recommendation_names = sample_df.loc[similar_items_indices, 'item_name'].tolist()
+        return recommendations, recommendation_names
