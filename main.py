@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 df_merged = pd.read_csv("df_merged.csv")
+df_sample = pd.read_csv("sample_df.csv")
 
 #http://127.0.0.1:8000
 
@@ -38,10 +39,7 @@ def UserForGenre(genero: str):
 
 
 @app.get('/recomendacion_juego/{id_de_producto}')
-
-df_sample = pd.read_csv("sample_df.csv")
 item_profiles = df_sample.groupby('item_id').agg({'sentiment_score': 'mean', 'item_name': 'first'}).reset_index()
-
 if item_profiles.empty:
     print("No se encontró un juego similar")
 else:
