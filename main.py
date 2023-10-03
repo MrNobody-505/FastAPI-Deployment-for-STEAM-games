@@ -39,8 +39,8 @@ def UserForGenre(genero: str):
 
 @app.get('/recomendacion_juego/{id_de_producto}')
 
-sample_df = pd.read_csv("sample_df.csv")
-item_profiles = sample_df.groupby('item_id').agg({'sentiment_score': 'mean', 'item_name': 'first'}).reset_index()
+df_sample = pd.read_csv("sample_df.csv")
+item_profiles = df_sample.groupby('item_id').agg({'sentiment_score': 'mean', 'item_name': 'first'}).reset_index()
 
 if item_profiles.empty:
     print("No se encontró un juego similar")
