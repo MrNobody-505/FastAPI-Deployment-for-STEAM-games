@@ -38,4 +38,4 @@ def UserForGenre(genero: str):
 
 
 @app.get('/recomendacion_juego/{idproducto}')
-" "
+
