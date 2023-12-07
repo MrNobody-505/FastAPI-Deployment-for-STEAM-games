@@ -1,10 +1,10 @@
-# Proyecto 1 ML - STEAM
+# Proyecto - STEAM
 
 Hola, soy César Forero!
-Este es mi proyecto de ML que he realizado como parte de mi primer proyecto individual para el programa de estudios de HENRY.
+Este es mi proyecto que he realizado como parte de mi primer proyecto individual para el programa de estudios de HENRY.
 
 ## Descripción preliminar
-La base del proyecto radica en la implementación de un modelo de ML de recomendación de los usuarios para la plataforma Steam, desarrollada por Valve corporation, empresa del sector de la tecnología y enfocada principalmente en el nicho de la distribución digital de videojuegos.
+La base del proyecto radica en la implementación de una API con el objetivo de que los usuarios puedan consultar información relevante acerca de la plataforma Steam y los servicios que ofrece, la cual fue desarrollada por Valve corporation, empresa del sector de la tecnología y enfocada principalmente en el nicho de la distribución digital de videojuegos.
 
 ## Descripción del trabajo desarrollado
 1. Inicialmente se tuvo que realizar la ingesta de los datos a mi entorno de trabajo y preparar las librerías que utilizaría para poder manejar los archivos entregados por la compañía. dichas librerías son pandas, ast y json.
